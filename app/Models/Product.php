@@ -18,4 +18,9 @@ class Product extends Model
     {
         return $this->belongsTo(ProductInventory::class, 'inventory_id');
     }
+
+    public function getImageAttribute($value)
+    {
+        return asset('images/' . $value);
+    }
 }
